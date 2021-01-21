@@ -1,32 +1,15 @@
-/*=============================================
-DataTable Servidor de administradores
-=============================================*/
-
-// $.ajax({
-
-// 	url: ruta+"/categorias",
-// 	success: function(respuesta){
-		
-// 		console.log("respuesta", respuesta);
-
-// 	},
-// 	error: function (jqXHR, textStatus, errorThrown) {
-//         console.error(textStatus + " " + errorThrown);
-//     }
-
-// })
 
 /*=============================================
-DataTable de administradores
+DataTable de Categorias
 =============================================*/
 
 var tablaCategorias = $("#tablaCategorias").DataTable({
-	
+
 	processing: true,
   	serverSide: true,
 
   	ajax:{
-  		url: ruta+"/categorias"		
+  		url: ruta+"/categorias"
   	},
 
   	"columnDefs":[{
@@ -60,7 +43,7 @@ var tablaCategorias = $("#tablaCategorias").DataTable({
 	    	render: function(data, type, full, meta){
 
 	    		return '<p class="validarRuta">'+data+'</p>'
-	    		
+
 	    	}
 	  	},
 	  	{
@@ -69,7 +52,7 @@ var tablaCategorias = $("#tablaCategorias").DataTable({
 	    	render: function(data, type, full, meta){
 
 	    		return '<img src="'+ruta+'/'+data+'" class="img-fluid">'
-	    		
+
 	    	},
 
 	    	orderable: false

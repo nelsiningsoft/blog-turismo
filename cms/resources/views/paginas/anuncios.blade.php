@@ -68,20 +68,20 @@
                     <th width="10px">#</th>
                     <th width="500px">Código</th>
                     <th>Página</th>
-                    <th>Acciones</th>         
+                    <th>Acciones</th>
 
-                  </tr> 
+                  </tr>
 
-                </thead>  
+                </thead>
 
               </table>
 
-    
+
               </div>
 
             </div>
 
-          </div>         
+          </div>
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
@@ -89,3 +89,4 @@
     </div>
     <!-- /.content -->
   </div>
+@endsection

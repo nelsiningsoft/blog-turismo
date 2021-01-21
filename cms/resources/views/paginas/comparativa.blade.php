@@ -46,46 +46,9 @@
                     <div class="col-lg-12">
 
                         <div class="card card-primary card-outline">
-
-                            <div class="card-header">
-
-
-
-                            </div>
-
                             <div class="card-body">
-                            <div class="btn-group">
-                                <div class="dropdown p-2">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Dropdown button
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown p-2">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Dropdown button
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown p-2">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Dropdown button
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
+
+
                                 {{-- Título Categoría --}}
 
                                 <div class="input-group mb-3">
@@ -94,13 +57,13 @@
                                         <i class="fas fa-list-ul"></i>
                                     </div>
 
-                                    <select class="form-control"  name="id_cat" required>
+                                    <select class="form-control" id="cat" name="id_cat" required>
 
                                         <option value="">Elige Categoría</option>
 
                                         @foreach ($categorias as $key => $value)
 
-                                            <option value="{{$value->id_categoria}}">{{$value->titulo_categoria}}</option>
+                                            <option  value="{{$value->id_categoria}}">{{$value->titulo_categoria}}</option>
 
                                         @endforeach
 
@@ -115,13 +78,15 @@
                                         <i class="fas fa-list-ul"></i>
                                     </div>
 
-                                    <select class="form-control"  name="id_art" required>
+                                    <select class="form-control" id="art" name="id_art" required>
 
                                         <option value="">Elige Articulo</option>
 
-                                        @foreach ($categorias as $key => $value)
+                                        @foreach ($articulos as $key => $value2)
 
-                                            <option value="{{$value->id_categoria}}">{{$value->titulo_categoria}}</option>
+                                            @if ($value->id_categoria==$value2->id_cat)
+                                                <option  value="{{$value2->id_articulo}}">{{$value2->titulo_articulo}}</option>
+                                            @endif
 
                                         @endforeach
 
@@ -141,3 +106,4 @@
         </div>
         <!-- /.content -->
     </div>
+@endsection
